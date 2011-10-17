@@ -1,0 +1,93 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title></title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- CSS concatenated and minified via ant build script-->
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="license" href="http://creativecommons.org/licenses/by/3.0/us/"/>
+  <!-- end CSS-->
+
+  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+
+  <div id="container">
+    
+    <header id="header">
+     <img src="img/transparent.png" height="190" alt="Nereid Monument"/>
+    </header>
+    
+    <div id="main" role="main">
+
+    <div id="middle">
+      <div class="middle align-center">
+        <p class="app-welcome">
+          Welcome to <b>Pleiades</b>, a gazetteer and graph of over 34,000 ancient places
+        </p>
+        <form 
+            method="post" 
+            action="http://pleiades.stoa.org/search">
+            <input type="text" id="q" name="SearchableText" cols="40" value="Internum Mare"/>
+            <input type="hidden" name="portal_type" value="Place" />
+            <input type="submit" value="Search" />
+          </form>
+        <p>or <a href="http://pleiades.stoa.org/places/">Browse the Graph</a></p>
+      </div>
+    </div>
+
+    <div id="bottom">
+      <div class="bottom align-center">
+        <p>Senior Editors: Roger Bagnall and Richard Talbert</p>
+        <p>Managing Editors: Tom Elliott and Jeffrey Becker</p>
+        <p>Associate Editors: Michael McCormick and Brian Turner</p>
+        <p>Chief Engineer: Sean Gillies</p>
+
+        <p>Pleiades is a joint project of the Ancient World Mapping Center, the Stoa Consortium, and the Institute for the Study of the Ancient World. It is supported by its institutional partners and by the U.S. National Endowment for the Humanities. To join the project, please see our <a href="http://pleiades.stoa.org">workspace</a>. For a listing of contributors, please see the <a href="http://pleiades.stoa.org/credits">credits</a>.</p>
+      </div>
+    </div>
+    <div class="push"><!-- sticky footer push --></div>
+    </div>
+
+    <footer id="footer">
+      Some rights reserved (cc-by) Ancient World Mapping Center and Institute for the Study of the Ancient World.
+    </footer>
+
+  </div> <!--! end of #container -->
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+
+
+  <!-- scripts concatenated and minified via ant build script-->
+  <script defer src="js/plugins.js"></script>
+  <script defer src="js/script.js"></script>
+  <!-- end scripts-->
+
+
+  <script> // Change UA-XXXXX-X to be your site's ID
+    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+  </script>
+
+
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>
