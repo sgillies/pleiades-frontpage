@@ -89,7 +89,7 @@ footer {width:100%;color:#ffffff;height:40px;text-align:center;line-height:40px;
 .app-welcome{margin-top:25px;font-size:x-large;}
 .align-center{text-align:center;}
 .bottom{background-color:#fff;padding:10px 50px 30px 50px;}
-
+#container{min-width:800px;}
 
 /* ==|== non-semantic helper classes ======================================== */
 .ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
