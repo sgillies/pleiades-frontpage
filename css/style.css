@@ -65,37 +65,43 @@ td { vertical-align: top; }
 /* ==|== primary styles =====================================================
    Author: 
    ========================================================================== */
-html, body {height: 915px;}
+html, body {width:100%;}
 body {
-  /*background-image: url('../img/background-slice.png');
-  background-position: top left;
-  background-repeat: repeat-x;*/
   background-color: #fff;
-  background-image: url('../img/bg33.jpg');
-  background-position: 50% -40px;
-  background-repeat: no-repeat;
+  background-image: url('../img/background-slice.png');
+  background-position: top left;
+  background-repeat: repeat-x;
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 p {font-size:large;}
-#main {min-height:100%;height: auto !important;height:100%;margin-bottom:-40px;}
-.push {height:100px;}
-/*footer {width:100%;color:#ffffff;height:40px;text-align:center;line-height:40px;overflow:hidden;font-size:12px;vertical-align:middle;}*/
-header{width:100%;height:40px;}
+header{width:100%;height:130px;}
 footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;vertical-align:middle;}
-.rights{background:#333;height:40px;line-height:40px;}
-#sponsors{background:#fff;padding:10px;vertical-align:center;}
+#container{width:100%;}
 #header {
-/*  background-image: url('../img/background-nereid.gif');
-  background-position: 50% 0px;
+  background-image: url('../img/background-nereid.gif');
+  background-position: 80% 0px;
   background-repeat: no-repeat;
-  background-color: transparent;*/
+  background-color: transparent;
+}
+#main {
+/*  background-image: url('../img/bg33.jpg');
+  background-position: 50% -40px;
+  background-repeat: no-repeat;*/
 }
 #top,#top-small,#bottom{width:100%;}
-#middle{width:100%;height:150px;background:url('../img/middlebg.png') repeat-x;border-top:2px solid #ffffff;border-bottom:2px solid #b2b2b2;vertical-align:center;}
-.app-welcome{margin-top:25px;font-size:x-large;}
+#middle{width:100%;height:60px;background:url('../img/middlebg.png') repeat-x;border-top:2px solid #ffffff;border-bottom:2px solid #b2b2b2;vertical-align:center;}
+#map{height:400px;}
+/*#form{width:750px;height:auto;margin:5px auto 5px auto;}*/
+#sponsors{background:#fff;padding:10px;vertical-align:center;}
+
+.push {height:100px;}
+/*footer {width:100%;color:#ffffff;height:40px;text-align:center;line-height:40px;overflow:hidden;font-size:12px;vertical-align:middle;}*/
+.rights{background:#333;height:40px;line-height:40px;}
+
+.app-welcome{margin-top:15px;font-size:x-large;}
 .align-center{text-align:center;}
-.bottom{background-color:#fff;padding:10px 50px 10px 50px;}
-#map{width:750px;height:500px;margin:0 auto 0 auto;background-color:transparent;}
+.bottom{background-color:#fff;margin:0 72px 0 72px;border:15px solid #fff;}
+.logo{margin-left:65px;}
 
 /* ==|== non-semantic helper classes ======================================== */
 .ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }

@@ -26,7 +26,7 @@
   <div id="container">
     
     <header id="header">
-     <!--img src="img/transparent.png" height="40" alt="Nereid Monument"/-->
+     <img class="logo" src="img/pleiades-logo-neg-tag.png" alt="Pleiades Logo">
     </header>
     
     <div id="main" role="main">
@@ -34,35 +34,34 @@
     <div id="middle">
       <div class="middle align-center">
         <p class="app-welcome">
-          Welcome to <b>Pleiades</b>, a community-built gazetteer and graph of ancient places
+          A community-built gazetteer and graph of ancient places
         </p>
+      </div>
+    </div>
+
+    <div id="bottom">
+      <div id="form" class="bottom align-center">
         <form action="http://pleiades.stoa.org/search">
             <input type="text" id="q" name="SearchableText" cols="40" value="Internum Mare"/>
             <input type="hidden" name="portal_type" value="Place" />
             <input type="submit" value="Search Pleiades" />
           </form>
         <p><a href="http://pleiades.stoa.org/places/">Browse the 34,000 Places</a>
-        or <a href="http://pleiades.stoa.org/front-page">Join and Contribute</a>.</p>
+        or <a href="#more">Join and Contribute</a>.</p>
       </div>
-    </div>
-
-    <div id="bottom">
       <div id="map" class="bottom align-center"></div>
-      <!--div class="bottom align-center">
-        <p>Senior Editors: Roger Bagnall and Richard Talbert</p>
-        <p>Managing Editors: Tom Elliott and Jeffrey Becker</p>
-        <p>Associate Editors: Michael McCormick and Brian Turner</p>
-        <p>Chief Engineer: Sean Gillies</p>
-
-        <p>Pleiades is a joint project of the Ancient World Mapping Center, the Stoa Consortium, and the Institute for the Study of the Ancient World. It is supported by its institutional partners and by the U.S. National Endowment for the Humanities. For a listing of contributors, please see our <a href="http://pleiades.stoa.org/credits">credits</a>. To join, follow our progress or get help, please visit our online <a href="http://pleiades.stoa.org">home</a>.</p>
-      </div-->
     </div>
-    <div class="push"><!-- sticky footer push --></div>
+    <!--div class="push"--><!-- sticky footer push --></div>
+    <div id="more" class="bottom align-center">
+      <a target="more"></a>More ... (joining and contributing, etc)
+    </div>
+    <div id="sponsors" class="bottom align-center">
+      <p>Pleiades is sponsored by:</p>
+      <img src="img/NEH-Logo-Horizontal_RGB.png"></div>
     </div>
 
     <footer id="footer">
       <div class="rights">Some rights reserved (cc-by) Ancient World Mapping Center, Institute for the Study of the Ancient World and the Contributors</div>
-      <div id="sponsors"><img src="img/NEH-Logo-Horizontal_RGB.png"></div>
     </footer>
 
   </div> <!--! end of #container -->
