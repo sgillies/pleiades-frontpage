@@ -65,33 +65,37 @@ td { vertical-align: top; }
 /* ==|== primary styles =====================================================
    Author: 
    ========================================================================== */
-html, body {height: 100%;}
+html, body {height: 915px;}
 body {
-  background-image: url('../img/background-slice.png');
+  /*background-image: url('../img/background-slice.png');
   background-position: top left;
-  background-repeat: repeat-x;
-  background-color: transparent;
+  background-repeat: repeat-x;*/
+  background-color: #fff;
+  background-image: url('../img/bg33.jpg');
+  background-position: 50% -40px;
+  background-repeat: no-repeat;
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 p {font-size:large;}
 #main {min-height:100%;height: auto !important;height:100%;margin-bottom:-40px;}
-.push {height:40px;}
+.push {height:100px;}
 /*footer {width:100%;color:#ffffff;height:40px;text-align:center;line-height:40px;overflow:hidden;font-size:12px;vertical-align:middle;}*/
-footer {width:100%;color:#ffffff;height:120px;text-align:center;overflow:hidden;font-size:12px;vertical-align:middle;}
-#footer{background:#000000 url('../img/footerbg.png') repeat-x 0 top;height:40px;line-height:40px;}
-#sponsors {margin-top:10px;vertical-align:center;}
+header{width:100%;height:40px;}
+footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;vertical-align:middle;}
+.rights{background:#333;height:40px;line-height:40px;}
+#sponsors{background:#fff;padding:10px;vertical-align:center;}
 #header {
-  background-image: url('../img/background-nereid.gif');
+/*  background-image: url('../img/background-nereid.gif');
   background-position: 50% 0px;
   background-repeat: no-repeat;
-  background-color: transparent;
+  background-color: transparent;*/
 }
 #top,#top-small,#bottom{width:100%;}
 #middle{width:100%;height:150px;background:url('../img/middlebg.png') repeat-x;border-top:2px solid #ffffff;border-bottom:2px solid #b2b2b2;vertical-align:center;}
 .app-welcome{margin-top:25px;font-size:x-large;}
 .align-center{text-align:center;}
 .bottom{background-color:#fff;padding:10px 50px 10px 50px;}
-#container{min-width:800px;}
+#map{width:750px;height:500px;margin:0 auto 0 auto;background-color:transparent;}
 
 /* ==|== non-semantic helper classes ======================================== */
 .ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
