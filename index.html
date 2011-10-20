@@ -106,112 +106,103 @@
 
     google.maps.event.addListener(infoWindow, 'domready', function() {
       $("#iwcContainer", msg).mouseenter(function(){clearTimeout(timer);$("iwcNav", msg).show();});
-      $("#iwcContainer", msg).mouseleave(function(){$("iwcNav", msg).hide();timer=setTimeout(play, 7000);});
+      $("#iwcContainer", msg).mouseleave(function(){$("iwcNav", msg).hide();timer=setTimeout(play, interval);});
       $("#iwcPrev", msg).click(function(){back();});
       $("#iwcNext", msg).click(function(){forward();});
     });
 
-    var next = ["randomPlaceJson2", "randomPlaceJson-unlocated", "randomPlaceJson", "randomPlaceJson-unlocated"];
+    var current = null;
+    var next = [];
     var prev = [];
 
     var timer = null;
     var url = null;
     var count = 0;
     var limit = 100;
+    var interval = 14000;
 
     function play() {
       if (count > limit) {
+        current = null;
         return null;
       }
-      if (next.length == 0) {
-        return null;
-      }
-      if (url != undefined && url != null) {
-        prev.push(url);
+      if (current != null) {
+        prev.push(current);
       }
       url = "http://pleiades.stoa.org/randomPlaceJson"; //next.shift();
-      if (url == undefined) {
-        return null;
-      }
-      else {
-        showPlace(url);
+      $.getJSON(url, function(data) {
+        current = data["id"];
+        show(data);
         count = count + 1;
-        timer = setTimeout(play, 7000);
-      }
+        timer = setTimeout(play, interval);
+      });
     }
 
     function forward() {
-      if (next.length == 0) {
-        return null;
-      }
-      if (url != undefined && url != null) {
-        prev.push(url);
-      }
-      url = next.shift();
-      if (url == undefined) {
-        /* At the end */
-        return null;
+      if (current != null) { prev.push(current); }
+      if (next.length > 0) {
+        current = next.shift();
+        url = "http://pleiades.stoa.org/places/" + current + "/json";
       }
       else {
-        showPlace(url);
+        url = "http://pleiades.stoa.org/randomPlaceJson";
       }
+      $.getJSON(url, function(data) {
+        current = data["id"];
+        show(data);
+      });
     }
 
     function back() {
-      if (prev.length == 0) {
-        return null;
-      }
-      if (url != undefined && url != null) {
-        next.unshift(url);
-      }
-      url = prev.pop();
-      if (url == undefined) {
-        /* At the start */
-        return null;
+      if (current != null) { next.unshift(current); }
+      if (prev.length > 0) {
+        current = prev.pop();
+        url = "http://pleiades.stoa.org/places/" + current + "/json";
       }
       else {
-        showPlace(url);
+        return null;
       }
+      $.getJSON(url, function(data) {
+        current = data["id"];
+        show(data);
+      });
     }
 
-    function showPlace(url) {
-      $.getJSON(url, function(data) {
+    function show(data) {
+      var bounds = data["bbox"];
+      if (bounds == null) {
+        latlng = latlng0;
+      }
+      else {
+        latlng = new google.maps.LatLng(
+          (bounds[1]+bounds[3])/2.0, (bounds[0]+bounds[2])/2.0);
+      }
 
-        var bounds = data["bbox"];
-        if (bounds == null) {
-          latlng = latlng0;
-        }
-        else {
-          latlng = new google.maps.LatLng(
-            (bounds[1]+bounds[3])/2.0, (bounds[0]+bounds[2])/2.0);
-        }
-
-        infoWindow.close();
-        var msg = $("#infoWindowContent").clone();
-        var link = "http://pleiades.stoa.org/places/" + data["id"];
-        $("#iwcLink a", msg).attr("href", link);
-        $("#iwcLink a", msg).text(link);
-        $("#iwcTitle", msg).text(data["title"]);
-        $("#iwcDescription", msg).text(data["description"]);
-        $(msg).show();
-        $("iwcNav", msg).hide();
-        infoWindow.setPosition(latlng);
-        infoWindow.setContent($(msg).html());
-        infoWindow.open(map);
-        
-        marker.setPosition(latlng);
-        
-        if (bounds == null) {
-          marker.setMap(null);
-          map.panTo(new google.maps.LatLng(latlng.lat()+3.0, latlng.lng()+1.2));
-          map.setZoom(5);
-        }
-        else {
-          marker.setMap(map);
-          map.panTo(new google.maps.LatLng(latlng.lat()+1.8, latlng.lng()+1.2));
-          map.setZoom(6);
-        }
-      });
+      infoWindow.close();
+      var msg = $("#infoWindowContent").clone();
+      var link = "http://pleiades.stoa.org/places/" + data["id"];
+      $("#iwcLink a", msg).attr("href", link);
+      $("#iwcLink a", msg).text(link);
+      $("#iwcTitle", msg).text(data["title"]);
+      $("#iwcDescription", msg).text(data["description"]);
+      $(msg).show();
+      $("iwcNav", msg).hide();
+      infoWindow.setPosition(latlng);
+      infoWindow.setContent($(msg).html());
+      infoWindow.open(map);
+      
+      marker.setPosition(latlng);
+      
+      if (bounds == null) {
+        marker.setMap(null);
+        map.panTo(new google.maps.LatLng(latlng.lat()+3.0, latlng.lng()+1.2));
+        map.setZoom(5);
+      }
+      else {
+        marker.setMap(map);
+        map.panTo(new google.maps.LatLng(latlng.lat()+1.8, latlng.lng()+1.2));
+        map.setZoom(6);
+      }
     }
 
     $(document).ready(function(){play();});
