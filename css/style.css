@@ -118,6 +118,12 @@ input.text {
   padding: 6px 25px 4px 6px;
   width: 180px;
 }
+input::-webkit-input-placeholder {
+    color:    #FFF;
+}
+input:-moz-placeholder {
+    color:    #FFF;
+}
 input.submit {
   background-color:#ccc;
   font-size:large;
