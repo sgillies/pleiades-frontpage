@@ -117,6 +117,7 @@ input.text {
   font-size:large;
   padding: 6px 25px 4px 6px;
   width: 180px;
+  vertical-align: center;
 }
 input::-webkit-input-placeholder {
     color:    #FFF;
@@ -130,11 +131,12 @@ input.submit {
   padding: 6px 6px 4px 6px;
   border: 1px solid #666;
   color:#333;
+  vertical-align: center;
 }
 .left,.right{width:45%;margin:1em;}
 .left{float:left;}
 .right{float:right;}
-.title{font-size:x-large;padding:0 1em 0 1em;}
+.title{font-size:x-large;margin:0 1em 0 1em;}
 .
 /* ==|== non-semantic helper classes ======================================== */
 .ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
