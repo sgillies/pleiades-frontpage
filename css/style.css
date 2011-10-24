@@ -84,6 +84,7 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
   background-position: 85% 0px;
   background-repeat: no-repeat;
   background-color: transparent;
+  background-size: contain;
 }
 #main {width:100%;}
 /*  background-image: url('../img/bg33.jpg');
