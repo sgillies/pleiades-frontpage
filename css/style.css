@@ -104,7 +104,7 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
 .logo{margin-left:5%;}
 .iwcNav{font-size:small;}
 .text-input{font-size:large;}
-legend{font-size:x-large; padding-bottom:0.5em;}
+legend{display:block;float:left;width:100%;font-size:x-large; padding-bottom:0.5em;}
 input.text {
   background-color: #2575AD;
   border: 1px solid #012F60;
