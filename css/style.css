@@ -117,7 +117,7 @@ input.text {
   font-size:large;
   padding: 6px 25px 4px 6px;
   width: 180px;
-  vertical-align: center;
+  vertical-align: bottom;
 }
 input::-webkit-input-placeholder {
     color:    #FFF;
@@ -130,8 +130,9 @@ input.submit {
   font-size:large;
   padding: 6px 6px 4px 6px;
   border: 1px solid #666;
+  padding: 6px 6px 4px 6px;
   color:#333;
-  vertical-align: center;
+  vertical-align: bottom;
 }
 .left,.right{width:45%;margin:1em;}
 .left{float:left;}
