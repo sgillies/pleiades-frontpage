@@ -84,21 +84,16 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
   background-position: 85% 0px;
   background-repeat: no-repeat;
   background-color: transparent;
+  background-size: 629px 349px;
 }
 #main {width:100%;}
-/*  background-image: url('../img/bg33.jpg');
-  background-position: 50% -40px;
-  background-repeat: no-repeat;*/
 }
 #top,#top-small,#bottom{width:100%;}
 #middle{height:60px;background:url('../img/middlebg.png') repeat-x;border-top:2px solid #ffffff;border-bottom:2px solid #b2b2b2;vertical-align:center;}
 #map{height:400px;}
-/*border-left:1px solid #ccc;border-right:1px solid #ccc;border-bottom:1px solid #ccc}*/
-/*#form{width:750px;height:auto;margin:5px auto 5px auto;}*/
 #sponsors{background:#fff;padding:10px;vertical-align:center;}
 
 .push {height:100px;}
-/*footer {width:100%;color:#ffffff;height:40px;text-align:center;line-height:40px;overflow:hidden;font-size:12px;vertical-align:middle;}*/
 .rights{background:#333;height:40px;line-height:40px;}
 
 .app-welcome{margin-top:15px;font-size:x-large;}
@@ -155,21 +150,13 @@ input.submit {
 
 @media only screen and (min-width: 480px) {
 
-#header {
-  background-size: 629px 349px;
-}
 
 }
 
 @media only screen and (min-width: 768px) {
 
-#header {
-  background-size: 839px 426px;
-}
 
 }
-
-
 
 /* ==|== print styles ======================================================= */
  
