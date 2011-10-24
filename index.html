@@ -100,12 +100,14 @@
 
     var latlng0 = new google.maps.LatLng(35.0, 20.0);
     var mapOptions = {
+      backgroundColor: "#FFFFFF",
       mapTypeId: google.maps.MapTypeId.TERRAIN,
       center: latlng0,
       disableDefaultUI: true,
       disableDoubleClickZoom: true,
       draggable: false,
       scrollwheel: false,
+      keyboardShortcuts: false,
       zoom: 6
       };
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
