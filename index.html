@@ -81,12 +81,13 @@
   <!-- Map info window content template -->
   <div id="infoWindowContent" style="display:none">
     <div id="iwcContainer">
-      <h2 id="iwcTitle">Title</h3>
+      <p id="iwcTitle">
+        <a id="iwcPrev" class="iwcNav" title="Go back to the previous place">&lt;&lt; Prev</a> 
+        <a id="detailsLink" href="#" title="Click for details"><span class="title">Title</span></a> 
+        <a id="iwcNext" class="iwcNav" title="Go forward to the next place">Next &gt;&gt;</a>
+</p>
       <p id="iwcDescription">Description</p>
-      <p id="iwcLink"><a href="#">Details</a></p>
-      <p id="iwcNav">
-        <a id="iwcPrev" title="Go back to the previous place">&lt;&lt; Prev</a> | <a id="iwcNext" title="Go forward to the next place">Next &gt;&gt;</a>
-      </p>
+      <p id="iwcLink"><a href="#" title="Click for details">Details</a></p>
     </div>
   </div>
 
@@ -197,7 +198,8 @@
       var link = "http://pleiades.stoa.org/places/" + data["id"];
       $("#iwcLink a", msg).attr("href", link);
       $("#iwcLink a", msg).text(link);
-      $("#iwcTitle", msg).text(data["title"]);
+      $("#iwcTitle #detailsLink", msg).attr("href", link);
+      $("#iwcTitle span", msg).text(data["title"]);
       $("#iwcDescription", msg).text(data["description"]);
       $(msg).show();
       $("iwcNav", msg).hide();

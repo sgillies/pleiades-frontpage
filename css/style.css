@@ -107,7 +107,7 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
 #bottom{margin:0 5% 0 5%;}
 .bottom{background-color:#fff;}
 .logo{margin-left:5%;}
-#iwcNav{font-size:small;}
+.iwcNav{font-size:small;}
 .text-input{font-size:large;}
 legend{font-size:x-large; padding-bottom:0.5em;}
 input.text {
@@ -134,6 +134,8 @@ input.submit {
 .left,.right{width:45%;margin:1em;}
 .left{float:left;}
 .right{float:right;}
+.title{font-size:x-large;padding:0 1em 0 1em;}
+.
 /* ==|== non-semantic helper classes ======================================== */
 .ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
 .ir br { display: none; }
