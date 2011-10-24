@@ -83,7 +83,7 @@
     <div id="iwcContainer">
       <p id="iwcTitle">
         <a id="iwcPrev" class="iwcNav" title="Go back to the previous place">&lt;&lt; Prev</a> 
-        <a id="detailsLink" href="#" title="Click for details"><span class="title">Title</span></a> 
+        <span class="title"><a id="detailsLink" href="#" title="Click for details">Title</a></span>
         <a id="iwcNext" class="iwcNav" title="Go forward to the next place">Next &gt;&gt;</a>
 </p>
       <p id="iwcDescription">Description</p>
@@ -199,7 +199,7 @@
       $("#iwcLink a", msg).attr("href", link);
       $("#iwcLink a", msg).text(link);
       $("#iwcTitle #detailsLink", msg).attr("href", link);
-      $("#iwcTitle span", msg).text(data["title"]);
+      $("#iwcTitle #detailsLink", msg).text(data["title"]);
       $("#iwcDescription", msg).text(data["description"]);
       $(msg).show();
       $("iwcNav", msg).hide();
