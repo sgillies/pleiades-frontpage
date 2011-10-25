@@ -133,7 +133,8 @@ input.submit {
 .left{float:left;}
 .right{float:right;}
 .title{font-size:x-large;margin:0 1em 0 1em;}
-.
+.decoGui{font-size:large;vertical-align:bottom;}
+
 /* ==|== non-semantic helper classes ======================================== */
 .ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
 .ir br { display: none; }
