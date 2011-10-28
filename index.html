@@ -186,7 +186,7 @@
         $.ajax({
           url: url,
           dataType: 'json',
-          headers: {'Cache-Control': 'max-age=0'},
+          headers: {'If-None-Match': '*'},
           success: function(data) {
             limit = data['limit'];
             current = data['results'][0]['id'];
