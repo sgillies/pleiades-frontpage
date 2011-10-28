@@ -183,16 +183,21 @@
     function forward() {
       if (current != null) { prev.push(current); }
       if (next.length == 0) {
-        $.getJSON(url, function(data) {
-          limit = data['limit'];
-          current = data['results'][0]['id'];
-          if ($.inArray(current, prev) < 0 && 
-              $.inArray(current, next) < 0) {
-            show(data['results'][0]);
-          }
-          else {
-            current = data['results'][1]['id'];
-            show(data['results'][1]);
+        $.ajax({
+          url: url,
+          dataType: 'json',
+          headers: {'Cache-Control': 'max-age=0'},
+          success: function(data) {
+            limit = data['limit'];
+            current = data['results'][0]['id'];
+            if ($.inArray(current, prev) < 0 && 
+                $.inArray(current, next) < 0) {
+              show(data['results'][0]);
+            }
+            else {
+              current = data['results'][1]['id'];
+              show(data['results'][1]);
+            }
           }
         });
       }
