@@ -131,53 +131,91 @@
     var prev = [];
 
     var timer = null;
-    var url = null;
     var count = 0;
     var limit = 100;
     var interval = 8000;
-
+    
+    /* Begin in recent-seeking state */
+    var state = "recent-seeking";
+    var url = "http://pleiades.stoa.org/ssdRecentPlaceJson";
+    
     function play() {
       if (count > limit) {
-        current = null;
-        return null;
+        if (state == "recent-seeking") { // switch state
+          state = "any-seeking";
+          count = 0;
+          url = "http://pleiades.stoa.org/ssdAnyPlaceJson";
+        }
+        else { // quit
+          current = null;
+          return null;
+        }
       }
       if (current != null) {
         prev.push(current);
       }
-      url = "http://pleiades.stoa.org/randomPlaceJson"; //next.shift();
-      $.getJSON(url, function(data) {
-        current = data["id"];
-        show(data);
-        count = count + 1;
-        timer = setTimeout(play, interval);
-      });
+      if (next.length == 0) {
+        $.getJSON(url, function(data) {
+          limit = data['limit'];
+          current = data['results'][0]['id'];
+          if ($.inArray(current, prev) < 0 && 
+              $.inArray(current, next) < 0) {
+            show(data['results'][0]);
+          }
+          else {
+            current = data['results'][1]['id'];
+            show(data['results'][1]);
+          }
+        });
+      }
+      else {
+        current = next.shift();
+        var nextUrl = "http://pleiades.stoa.org/places/" + current + "/json";
+        $.getJSON(nextUrl, function(data) {
+          current = data["id"];
+          show(data);
+        });
+      }
+      count = count + 1;
+      timer = setTimeout(play, interval);
     }
 
     function forward() {
       if (current != null) { prev.push(current); }
-      if (next.length > 0) {
-        current = next.shift();
-        url = "http://pleiades.stoa.org/places/" + current + "/json";
+      if (next.length == 0) {
+        $.getJSON(url, function(data) {
+          limit = data['limit'];
+          current = data['results'][0]['id'];
+          if ($.inArray(current, prev) < 0 && 
+              $.inArray(current, next) < 0) {
+            show(data['results'][0]);
+          }
+          else {
+            current = data['results'][1]['id'];
+            show(data['results'][1]);
+          }
+        });
       }
       else {
-        url = "http://pleiades.stoa.org/randomPlaceJson";
+        current = next.shift();
+        var nextUrl = "http://pleiades.stoa.org/places/" + current + "/json";
+        $.getJSON(nextUrl, function(data) {
+          current = data["id"];
+          show(data);
+        });
       }
-      $.getJSON(url, function(data) {
-        current = data["id"];
-        show(data);
-      });
     }
 
     function back() {
       if (current != null) { next.unshift(current); }
       if (prev.length > 0) {
         current = prev.pop();
-        url = "http://pleiades.stoa.org/places/" + current + "/json";
+        var backUrl = "http://pleiades.stoa.org/places/" + current + "/json";
       }
       else {
         return null;
       }
-      $.getJSON(url, function(data) {
+      $.getJSON(backUrl, function(data) {
         current = data["id"];
         show(data);
       });
