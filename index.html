@@ -86,6 +86,7 @@
         <span class="title"><a id="detailsLink" href="#" title="Click for details">Title</a></span>
         <a id="iwcNext" class="iwcNav" title="Go forward to the next place">Next <span= class="decoGui">&raquo;</span></a>
 </p>
+      <p id="iwcByline" class="byline">Last Modified 2011-01-01 by sgillies</p>
       <p id="iwcDescription">Description</p>
       <p id="iwcLink"><a href="#" title="Click for details">Details</a></p>
     </div>
@@ -244,6 +245,13 @@
       $("#iwcTitle #detailsLink", msg).attr("href", link);
       $("#iwcTitle #detailsLink", msg).text(data["title"]);
       $("#iwcDescription", msg).text(data["description"]);
+      if (data["author"] != null) {
+        $("#iwcByline", msg).text(
+            "Last modified " + data["modified"] + " by " + data["author"]);
+      }
+      else {
+        $("#iwcByline", msg).hide();
+      }
       $(msg).show();
       $("iwcNav", msg).hide();
       infoWindow.setPosition(latlng);
