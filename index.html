@@ -88,7 +88,7 @@
 </p>
       <p id="iwcByline" class="byline">Last Modified 2011-01-01 by sgillies</p>
       <p id="iwcDescription">Description</p>
-      <p id="iwcLink"><a href="#" title="Click for details">Details</a></p>
+      <!--p id="iwcLink"><a href="#" title="Click for details">Details</a></p-->
     </div>
   </div>
 
@@ -240,14 +240,17 @@
       infoWindow.close();
       var msg = $("#infoWindowContent").clone();
       var link = "http://pleiades.stoa.org/places/" + data["id"];
-      $("#iwcLink a", msg).attr("href", link);
-      $("#iwcLink a", msg).text(link);
+      //$("#iwcLink a", msg).attr("href", link);
+      //$("#iwcLink a", msg).text(link);
       $("#iwcTitle #detailsLink", msg).attr("href", link);
       $("#iwcTitle #detailsLink", msg).text(data["title"]);
       $("#iwcDescription", msg).text(data["description"]);
-      if (data["author"] != null) {
-        $("#iwcByline", msg).text(
-            "Last modified " + data["modified"] + " by " + data["author"]);
+      if (data["recent_changes"] != null) {
+        var items = $.map(data["recent_changes"], function(value){
+          var modified = new Date(value["modified"]);
+          return modified.toDateString() + " by " + value["principal"];
+          });
+        $("#iwcByline", msg).text(items.join(", "));
       }
       else {
         $("#iwcByline", msg).hide();
