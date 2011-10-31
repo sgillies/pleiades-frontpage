@@ -240,8 +240,6 @@
       infoWindow.close();
       var msg = $("#infoWindowContent").clone();
       var link = "http://pleiades.stoa.org/places/" + data["id"];
-      //$("#iwcLink a", msg).attr("href", link);
-      //$("#iwcLink a", msg).text(link);
       $("#iwcTitle #detailsLink", msg).attr("href", link);
       $("#iwcTitle #detailsLink", msg).text(data["title"]);
       $("#iwcDescription", msg).text(data["description"]);
@@ -250,7 +248,7 @@
           var modified = new Date(value["modified"]);
           return modified.toDateString() + " by " + value["principal"];
           });
-        $("#iwcByline", msg).text(items.join(", "));
+        $("#iwcByline", msg).text("Last modified: " + items.join(", "));
       }
       else {
         $("#iwcByline", msg).hide();
