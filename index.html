@@ -243,9 +243,19 @@
       $("#iwcTitle #detailsLink", msg).attr("href", link);
       $("#iwcTitle #detailsLink", msg).text(data["title"]);
       $("#iwcDescription", msg).text(data["description"]);
+
+
+
       if (data["recent_changes"] != null) {
         var items = $.map(data["recent_changes"], function(value){
-          var modified = new Date(value["modified"]);
+          var q = value["modified"];
+          var modified = new Date(
+            Date.UTC(
+              parseInt(q.substring(0,4)),
+              parseInt(q.substring(5,7)),
+              parseInt(q.substring(8,10)),
+              parseInt(q.substring(11,13)),
+              parseInt(q.substring(14,16))))
           return modified.toDateString() + " by " + value["principal"];
           });
         $("#iwcByline", msg).text("Last modified: " + items.join(", "));
@@ -253,6 +263,7 @@
       else {
         $("#iwcByline", msg).hide();
       }
+
       $(msg).show();
       $("iwcNav", msg).hide();
       infoWindow.setPosition(latlng);
