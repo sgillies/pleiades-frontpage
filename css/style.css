@@ -98,8 +98,10 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
 
 .app-welcome{margin-top:15px;font-size:x-large;}
 .align-center{text-align:center;}
-#middle{margin:0 5% 0 5%;}
-#bottom{margin:0 5% 0 5%;}
+#search-form{margin:0 5% 0 5%;}
+#more{margin:0 5% 0 5%;}
+/*#middle{margin:0 5% 0 5%;}
+#bottom{margin:0 5% 0 5%;}*/
 .bottom{background-color:#fff;}
 .logo{margin-left:5%;}
 .iwcNav{font-size:small;}
