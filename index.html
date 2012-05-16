@@ -48,7 +48,7 @@
             <legend id="placesSearchLegend" style="visibility:hidden">Search the 42 Places</legend>
             <input class="text" type="text" id="q" name="SearchableText" cols="40" placeholder="Internum Mare" value="" required="1">
             <input type="hidden" name="portal_type" value="Place">
-            <input class="submit" type="submit" value="Go">
+            <input class="submit" type="submit" name="submit" value="Search">
           </fieldset>
         </form>
         <br/>
@@ -162,7 +162,7 @@
     
     /* Begin in recent-seeking state */
     var state = "recent-seeking";
-    var url = "http://pleiades.stoa.org/ssdRecentPlaceJson";
+    var url = "http://pleiades.stoa.org/api/ssdRecentPlaceJson";
 
     function play() {
       
@@ -170,7 +170,7 @@
         if (state == "recent-seeking") { // switch state
           state = "any-seeking";
           count = 0;
-          url = "http://pleiades.stoa.org/ssdAnyPlaceJson";
+          url = "http://pleiades.stoa.org/api/ssdAnyPlaceJson";
         }
         else { // quit
           current = null;
