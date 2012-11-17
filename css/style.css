@@ -78,7 +78,7 @@ p {font-size:large;}
 a {color:#2575AD;}
 header{width:100%;height:130px;}
 footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;vertical-align:middle;}
-#container{width:100%;}
+#container{height:100%;}
 #header {
   background-image: url('../img/background-nereid.gif');
   background-position: 85% 0px;
@@ -86,11 +86,11 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
   background-color: transparent;
   background-size: 629px 349px;
 }
-#main {width:100%;}
+#main {width:100%; height:auto;}
 }
 #top,#top-small,#bottom{width:100%;}
 #middle{height:60px;background:url('../img/middlebg.png') repeat-x;border-top:2px solid #ffffff;border-bottom:2px solid #b2b2b2;vertical-align:center;}
-#map{height:400px;}
+#map {height:400px;}
 #sponsors{background:#fff;padding:10px;vertical-align:center;}
 
 .push {height:100px;}
@@ -98,8 +98,8 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
 
 .app-welcome{margin-top:15px;font-size:x-large;}
 .align-center{text-align:center;}
-#middle{margin:0 5% 0 5%;}
-#bottom{margin:0 5% 0 5%;}
+#search-form{margin:0 5% 0 5%;}
+#more{margin:0 5% 0 5%;}
 .bottom{background-color:#fff;}
 .logo{margin-left:5%;}
 .iwcNav{font-size:small;}

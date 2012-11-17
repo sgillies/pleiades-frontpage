@@ -15,6 +15,7 @@
 
   <!-- CSS concatenated and minified via ant build script-->
   <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.4/leaflet.css" />
   <link rel="license" href="http://creativecommons.org/licenses/by/3.0/us/"/>
   <!-- end CSS-->
 
@@ -40,7 +41,8 @@
     </div>
 
     <div id="bottom">
-      <div id="map" class="bottom align-center" title="A slideshow of random places from Pleiades. Mouse over the caption to pause the slideshow and leave to resume. Press Esc to terminate the slideshow. Reload to begin again."></div>
+      <!-- class="bottom align-center" -->
+      <div id="map" title="A slideshow of random places from Pleiades. Press P to pause/play, J to go back one step, or K to advance. Press Esc to terminate the slideshow. Reload the page to begin again."></div>
       <div id="search-form" class="bottom align-center">
         <br/>
         <form action="http://pleiades.stoa.org/search">
@@ -48,7 +50,7 @@
             <legend id="placesSearchLegend" style="visibility:hidden">Search the 42 Places</legend>
             <input class="text" type="text" id="q" name="SearchableText" cols="40" placeholder="Internum Mare" value="" required="1">
             <input type="hidden" name="portal_type" value="Place">
-            <input class="submit" type="submit" value="Go">
+            <input class="submit" type="submit" name="submit" value="Search">
           </fieldset>
         </form>
         <br/>
@@ -92,15 +94,14 @@
 
   <!-- Map info window content template -->
   <div id="infoWindowContent" style="display:none">
-    <div id="iwcContainer">
+    <div id="iwcContainer" class="align-center">
       <p id="iwcTitle">
-        <a id="iwcPrev" class="iwcNav" title="Go back to the previous place"><span class="decoGui">&laquo;</span> Prev</a> 
-        <span class="title"><a id="detailsLink" href="#" title="Click for details">Title</a></span>
-        <a id="iwcNext" class="iwcNav" title="Go forward to the next place">Next <span= class="decoGui">&raquo;</span></a>
-</p>
+        <span class="title">
+          <a id="detailsLink" href="#" title="Click for details">Title</a>
+        </span>
+      </p>
       <p id="iwcByline" class="byline">Last Modified 2011-01-01 by sgillies</p>
       <p id="iwcDescription">Description</p>
-      <!--p id="iwcLink"><a href="#" title="Click for details">Details</a></p-->
     </div>
   </div>
 
@@ -119,38 +120,28 @@
           $("#placesSearchLegend", document).css("visibility", "visible");
         });
   </script>
-  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-
+  <script src="http://cdn.leafletjs.com/leaflet-0.4.4/leaflet.js"></script>
   <script>
-    var latlng0 = new google.maps.LatLng(35.0, 20.0);
-    var mapOptions = {
-      backgroundColor: "#FFFFFF",
-      mapTypeId: google.maps.MapTypeId.TERRAIN,
-      center: latlng0,
-      disableDefaultUI: true,
-      disableDoubleClickZoom: true,
-      draggable: false,
-      scrollwheel: false,
-      keyboardShortcuts: false,
-      zoom: 6
-      };
-    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
-    var latlng = new google.maps.LatLng(35.0, 20.0);
-    var placeIcon = new google.maps.MarkerImage(
-      "http://google-maps-icons.googlecode.com/files/justice.png");
-    var marker = new google.maps.Marker({icon: placeIcon});
+    var latlng0 = new L.LatLng(35.0, 20.0);
+    
+    /* Map is initialized in the show() function below */
+    var map = null;
+    
+    var tiles = L.tileLayer(
+    //    'http://static.ahlfeldt.se/srtm/imperium/{z}/{x}/{y}.png', {
+        'http://api.tiles.mapbox.com/v3/isawnyu.map-p75u7mnj/{z}/{x}/{y}.png', {
+            maxZoom: 7
+            });
+            
+    var placeIcon = new L.Icon({
+        iconUrl: "http://atlantides.org/images/justice-blue.png" });
+    var marker = new L.Marker([-90, 45], {icon: placeIcon});
 
     var msg = null;
-    var infoWindow = new google.maps.InfoWindow(
-        {offset: new google.maps.Size(12,24)});
-
-    google.maps.event.addListener(infoWindow, 'domready', function() {
-      $("#iwcContainer", msg).mouseenter(function(){clearTimeout(timer);$("iwcNav", msg).show();});
-      $("#iwcContainer", msg).mouseleave(function(){$("iwcNav", msg).hide();timer=setTimeout(play, 500);});
-      $("#iwcPrev", msg).click(function(){back();});
-      $("#iwcNext", msg).click(function(){forward();});
-    });
+    var infoWindow = new L.Popup({
+        offset: new L.Point(16, 3),
+        closeButton: false,
+        maxWidth: 500 });
 
     var current = null;
     var next = [];
@@ -163,7 +154,7 @@
     
     /* Begin in recent-seeking state */
     var state = "recent-seeking";
-    var url = "http://pleiades.stoa.org/ssdRecentPlaceJson";
+    var url = "http://pleiades.stoa.org/api/ssdRecentPlaceJson";
 
     function play() {
       
@@ -171,7 +162,7 @@
         if (state == "recent-seeking") { // switch state
           state = "any-seeking";
           count = 0;
-          url = "http://pleiades.stoa.org/ssdAnyPlaceJson";
+          url = "http://pleiades.stoa.org/api/ssdAnyPlaceJson";
         }
         else { // quit
           current = null;
@@ -254,17 +245,35 @@
     }
 
     function show(data) {
+
       var bounds = data["bbox"];
       if (bounds == null) {
         latlng = latlng0;
       }
       else {
-        latlng = new google.maps.LatLng(
+        latlng = new L.LatLng(
           (bounds[1]+bounds[3])/2.0, (bounds[0]+bounds[2])/2.0);
       }
 
-      infoWindow.close();
-      var msg = $("#infoWindowContent").clone();
+      if (map == null) {
+        map = L.map('map', {
+          center: latlng,
+          zoom: 6,
+          closePopupOnClick: false,
+          dragging: false,
+          touchZoom: false,
+          scrollWheelZoom: false,
+          doubleClickZoom: false,
+          boxZoom: false,
+          keyboard: false,
+          zoomControl: false,
+          attributionControl: false });
+        tiles.addTo(map);
+        marker.addTo(map);
+      }
+
+      map.closePopup();
+      var msg = $("#infoWindowContent").clone(true, true);
       var link = "http://pleiades.stoa.org/places/" + data["id"];
       $("#iwcTitle #detailsLink", msg).attr("href", link);
       $("#iwcTitle #detailsLink", msg).text(data["title"]);
@@ -290,26 +299,37 @@
 
       $(msg).show();
       $("iwcNav", msg).hide();
-      infoWindow.setPosition(latlng);
+      
+      infoWindow.setLatLng(latlng);
       infoWindow.setContent($(msg).html());
-      infoWindow.open(map);
       
-      marker.setPosition(latlng);
-      
+      marker.setLatLng(latlng);
+      map.openPopup(infoWindow);
+
       if (bounds == null) {
-        marker.setMap(null);
-        map.panTo(new google.maps.LatLng(latlng.lat()+3.0, latlng.lng()+1.2));
+        map.panTo([latlng.lat+2.0, latlng.lng]);
         map.setZoom(5);
       }
       else {
-        marker.setMap(map);
-        map.panTo(new google.maps.LatLng(latlng.lat()+1.8, latlng.lng()+1.2));
+        map.panTo([latlng.lat+1.2, latlng.lng]);
         map.setZoom(6);
       }
     }
 
     $(document).keyup(function(e) {
       if (e.keyCode == 27) { count = limit + 1; } // esc ends the slideshow
+      /* Toggle pause/play with p key */
+      else if (e.keyCode == 80) {
+        if (timer == null) {
+          timer=setTimeout(play, 500);
+        }
+        else {
+          clearTimeout(timer);
+          timer = null;
+        }
+      }
+      else if (e.keyCode == 74) { back(); } // j goes back
+      else if (e.keyCode == 75) { forward(); } // j goes forward
     });
 
     $(document).ready(function(){play();});
