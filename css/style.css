@@ -95,7 +95,7 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
 #links{
   margin: 0px;
   padding: 10px 0;
-  background-color: #b2b2b2;
+  background:url('../img/middlebg.png') repeat-x;
 }
 #links > p {
   margin: 0px;
