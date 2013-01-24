@@ -93,9 +93,13 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
 #map{height:400px;}
 #sponsors{background:#fff;padding:10px;vertical-align:center;}
 #links{
-  margin: none;
-  padding: none;
+  margin: 0px;
+  padding: 0px;
   background-color: pink;
+}
+#links > p {
+  margin: 0px;
+  padding: 0px;
 }
 .push {height:100px;}
 .rights{background:#333;height:40px;line-height:40px;}
