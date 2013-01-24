@@ -94,7 +94,8 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
 #sponsors{background:#fff;padding:10px;vertical-align:center;}
 #links{
   margin: 0px;
-  padding: 0px;
+  padding: 10px 0;
+  background-color: #b2b2b2;
 }
 #links > p {
   margin: 0px;
