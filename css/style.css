@@ -94,9 +94,9 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
 #sponsors{background:#fff;padding:10px;vertical-align:center;}
 #links{
   margin: 0;
-  padding: 5px 0;
-  background:url('../img/middlebg.png') repeat-x;
-  border-bottom:2px solid #ffffff;border-top:2px solid #b2b2b2;
+  padding: 3px 0;
+  /* background:url('../img/middlebg.png') repeat-x; */
+  /* border-bottom:2px solid #ffffff;border-top:2px solid #b2b2b2; */
 }
 #links > p {
   margin: 0px;
@@ -105,7 +105,7 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
   font-size: 16px;
 }
 #links a, #links a:visited, #links a:link {
-  color: black;
+  color: #2575AD;
   text-decoration: underline;
 }
 #links a:hover {
