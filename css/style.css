@@ -93,7 +93,7 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
 #map{height:400px;}
 #sponsors{background:#fff;padding:10px;vertical-align:center;}
 #links{
-  margin: 0;
+  margin: 5px 0 0 0;
   padding: 3px 0;
   /* background:url('../img/middlebg.png') repeat-x; */
   /* border-bottom:2px solid #ffffff;border-top:2px solid #b2b2b2; */
@@ -104,11 +104,11 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
   text-transform: lowercase;
   font-size: 16px;
 }
-#links a, #links a:visited, #links a:link {
+a, a:visited, a:link {
   color: #2575AD;
   text-decoration: underline;
 }
-#links a:hover {
+a:hover {
   text-decoration: none;
 }
 
