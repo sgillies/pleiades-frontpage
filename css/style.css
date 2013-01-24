@@ -90,7 +90,8 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
 }
 #top,#top-small,#bottom{width:100%;}
 #middle{height:60px;background:url('../img/middlebg.png') repeat-x;border-top:2px solid #ffffff;border-bottom:2px solid #b2b2b2;vertical-align:center;}
-#map{height:400px;}
+#map{height:400px;
+border: 3px solid red;}
 #sponsors{background:#fff;padding:10px;vertical-align:center;}
 #links{
   margin: 0;
