@@ -93,9 +93,8 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
 #map{height:400px;}
 #sponsors{background:#fff;padding:10px;vertical-align:center;}
 #links{
-  margin:0 5% 0 5%;
-  padding:0 0 0 0;
-  position: absolute;
+  margin: none;
+  padding: none;
   background-color: pink;
 }
 .push {height:100px;}
