@@ -116,7 +116,7 @@ a:hover {
 .push {height:100px;}
 .rights{background:#333;height:40px;line-height:40px;}
 
-.app-welcome{margin-top:10px;font-size:x-large;}
+.app-welcome{margin-top:10px;font-size:x-large;text-transform: lowercase;}
 .align-center{text-align:center;}
 #search-form{margin:0 5% 0 5%;}
 #more{margin:0 5% 0 5%;}
