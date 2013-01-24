@@ -102,10 +102,7 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
   margin: 0;
   padding: 8px 0;
   background:url('../img/middlebg.png') repeat-x; 
-  border-left: 1px solid #eeeeee;
-  border-right: 1px solid #eeeeee;
-  border-top:1px solid #b2b2b2;
-  border-bottom:1px solid #b2b2b2;
+  border:1px solid #b2b2b2;
 }
 #links > p {
   margin: 0px;
