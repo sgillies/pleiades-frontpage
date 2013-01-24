@@ -125,7 +125,7 @@ a:hover {
 .iwcNav{font-size:small;}
 .byline{font-size:small;}
 .text-input{font-size:large;}
-legend{display:block;float:left;width:100%;font-size:x-large; padding-bottom:0.5em;text-transform: lowercase;}
+legend{display:block;float:left;width:100%;font-size:x-large; padding-bottom:0.5em;}
 input.text {
   background-color: #2575AD;
   border: 1px solid #012F60;
