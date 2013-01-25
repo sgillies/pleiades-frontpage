@@ -87,18 +87,23 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
   background-color: transparent;
   background-size: 629px 349px;
 }
-#chicklets {
+#mapchicklets {
   position: absolute;
   top: 133px;
   right: 3px;
-  height: 20px;
-  margin: 0;
-  padding: 0;
 }
-#chicklets  img {
+#footerchicklets {
+  float: left;
+  margin-left: 8px;
+  padding-top: 10px;
+}
+.chicklets  img {
   width: 20px;
   height: 20px;
   margin-right: 3px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
 }
 #georssicon {
   width: 25px !important;
@@ -134,7 +139,7 @@ a:hover {
 }
 
 .push {height:100px;}
-.rights{background:#333;height:40px;line-height:40px;}
+.rights{background:#333;height:40px;line-height:40px;padding-right: 66px;}
 
 .app-welcome{margin-top:3px;font-size:large;text-transform: lowercase;}
 .align-center{text-align:center;}
