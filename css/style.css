@@ -87,10 +87,29 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
   background-color: transparent;
   background-size: 629px 349px;
 }
+#chicklets {
+  position: absolute;
+  top: 133px;
+  right: 3px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+#chicklets  img {
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
+}
+#georssicon {
+  width: 25px !important;
+  height: 25px !important;
+  margin-top: 1px;
+  margin-right: 0 !important;
+}
 #main {width:100%; height:auto;}
 }
 #top,#top-small,#bottom{width:100%;}
-#middle{height:50px;background:url('../img/middlebg.png') repeat-x;border-top:2px solid #ffffff;border-bottom:2px solid #b2b2b2;vertical-align:center;}
+#middle{height:30px;background:url('../img/middlebg.png') repeat-x;border-top:2px solid #ffffff;border-bottom:2px solid #b2b2b2;vertical-align:center;}
 #map {height:400px;}
 #sponsors{background:#fff;padding:10px;vertical-align:center;}
 #links{
@@ -117,7 +136,7 @@ a:hover {
 .push {height:100px;}
 .rights{background:#333;height:40px;line-height:40px;}
 
-.app-welcome{margin-top:10px;font-size:x-large;text-transform: lowercase;}
+.app-welcome{margin-top:3px;font-size:large;text-transform: lowercase;}
 .align-center{text-align:center;}
 #search-form{margin:0 5% 0 5%;}
 #more{margin:0 5% 0 5%;}
