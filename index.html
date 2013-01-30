@@ -29,7 +29,12 @@
     <header id="header">
      <img class="logo" src="img/pleiades-logo-neg-tag.png" alt="Pleiades Logo">
     </header>
-    
+
+    <div id="mapchicklets" class="chicklets">
+      <a href="http://pleiades.stoa.org/news/changes.atom" title="Changes: subscribe to an GeoRSS feed of the most recent changes and additions to Pleiades content"><img id="georssicon" src="img/georss.png"/></a>
+    </div>
+
+
     <div id="main" role="main">
 
     <div id="middle">
@@ -43,6 +48,16 @@
     <div id="bottom">
       <!-- class="bottom align-center" -->
       <div id="map" title="A slideshow of random places from Pleiades. Press P to pause/play, J to go back one step, or K to advance. Press Esc to terminate the slideshow. Reload the page to begin again."></div>
+      <div id="links" class="bottom align-center">
+        <p>
+          <a href="http://pleiades.stoa.org/home">about</a> &#183;
+          <a href="http://pleiades.stoa.org/places">browse</a> &#183;
+          <a href="http://pleiades.stoa.org/downloads">download</a> &#183;
+          <a href="http://pleiades.stoa.org/news/blog">blog</a> &#183;
+          <a href="http://pleiades.stoa.org/credits">credits</a>
+
+        </p>
+      </div>
       <div id="search-form" class="bottom align-center">
         <br/>
         <form action="http://pleiades.stoa.org/search">
@@ -58,28 +73,22 @@
 
       <div id="more">
         <div class="left">
-          <p>Springing from the Classical Atlas Project and the <em>Barrington Atlas of the Greek and Roman World</em>, Pleiades is a historical gazetteer and more. It associates names and locations in time and provides structured information about the quality and provenance of these entities. There is also a graph in Pleiades: names and locations are collected within places and these collections are associated with other geographically connected places. Pleiades also serves as a vocabulary for talking about the geography of the ancient world within Linked Data sets and is referenced by research projects such as Google Ancient Places and PELAGIOS.</p>
+          <p>Pleiades is a historical <abbr title="a geographical dictionary or encyclopedia that provides information about places and placenames">gazetteer</abbr> and more. It gives scholars, students and enthusiasts worldwide the ability to use, create, share, and map historical geographic information about the ancient world. It associates names and locations in time and provides structured information about the quality and provenance of these entities.</p>
+          <p>There is also a <abbr title="Computer scientists use the term 'graph' to denote an information model in which individual information objects are linked together in pairwise fashion and those linkages can be exploited to find related information, infer dependencies and implications, and even create new knowledge programmatically">graph</abbr> in Pleiades: names and locations are collected into conceptual bundles (places) and these collections are associated with other geographically connected places.</p>
+          <p>Pleiades identifies places within the emerging web of ancient world linked data. It is an authoritative hub in an expanding constellation of online publications that treat the histories, languages, texts, and artifacts of antiquity.</p>
           <p><a href="http://pleiades.stoa.org/places/">More about the data ...</a></p>
         </div>
         <div class="right">
-        <p>Pleiades is one hundred percent open source, one hundred percent openly licensed and one hundred percent editable. Our open source software gets used and improved by a diverse crowd of programmers in the humanities and beyond. Our openly licensed resources have no surprises or encumberances, and their editability allows Pleiades users to correct or enrich resources – thereby tailoring the gazetteer and the entire linked data vocabulary to better meet their own particular needs. Pleiades welcomes your contribution, no matter how small, and we have a number of internal projects to suggest.</p>
+        <p>Pleiades is one hundred percent open source, one hundred percent openly licensed and one hundred percent editable.</p>
+        <p>Our open source software gets used and improved by a diverse crowd of programmers in the humanities and beyond. Our openly licensed resources have no costs attached, no surprises or encumberances.</p>
+        <p>Pleiades is a continuously published scholarly reference work for the 21st century. We embrace the new paradigm of citizen humanities, encouraging contributions from any knowledgeable person and doing so in a context of pervasive peer review.  Pleiades welcomes your contribution, no matter how small, and we have a number of useful tasks suitable for volunteers of every interest.</p>
         <p><a href="http://pleiades.stoa.org/welcome">More about contributing ...</a></p>
         </div>
         <div class="clearfix"></div>
       </div>
     </div>
 
-    <div id="links" class="bottom align-center">
-      <p>
-        <a href="http://pleiades.stoa.org/home">Project Home</a> &#183;
-        <a href="http://pleiades.stoa.org/places">Places</a> &#183;
-        <a href="http://pleiades.stoa.org/vocabularies">Vocabularies</a> &#183;
-        <a href="http://pleiades.stoa.org/docs">Documents</a> &#183;
-        <a href="http://pleiades.stoa.org/help">Help</a> &#183;
-        <a href="http://pleiades.stoa.org/news/blog">Blog</a> &#183;
-        <a href="http://pleiades.stoa.org/credits">Credits</a>
-      </p>
-    </div>
+
 
     <div id="sponsors" class="bottom align-center">
       <p>Pleiades is supported by:</p>
@@ -87,11 +96,21 @@
     </div>
 
     <footer id="footer">
-      <div class="rights">Some rights reserved (cc-by) Ancient World Mapping Center, Institute for the Study of the Ancient World and the Contributors</div>
+          <div id="footerchicklets" class="chicklets">
+      <a href="http://pleiades.stoa.org/news/blog/RSS" title="News: subscribe to an RSS feed of the latest news from the Pleiades Project Blog"><img src="img/rss.png" alt="RSS feed icon"/></a>
+      <a href="http://www.flickr.com/photos/tags/pleiades%3A%2A/" title="Photos: view pictures of Pleiades places on Flickr"><img src="img/flickr.png"/></a>
+      <a href="https://twitter.com/search/realtime?q=%23adfines" title="Twitter: read the latest tweets about Pleiades"><img src="img/twitter.png"/></a>
+
+    </div>
+      <div class="rights">Some rights reserved (<abbr title="Creative Commons Attribution License">cc-by</abbr>) Ancient World Mapping Center, Institute for the Study of the Ancient World and the Contributors</div>
+
+
+
     </footer>
 
   </div> <!--! end of #container -->
 
+</div>
   <!-- Map info window content template -->
   <div id="infoWindowContent" style="display:none">
     <div id="iwcContainer" class="align-center">

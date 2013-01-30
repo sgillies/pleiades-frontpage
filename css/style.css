@@ -21,6 +21,7 @@ a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
 
 abbr[title] { border-bottom: 1px dotted; }
+abbr[title]:hover { cursor: help;}
 b, strong { font-weight: bold; }
 blockquote { margin: 1em 40px; }
 dfn { font-style: italic; }
@@ -86,17 +87,61 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
   background-color: transparent;
   background-size: 629px 349px;
 }
+#mapchicklets {
+  position: absolute;
+  top: 133px;
+  right: 3px;
+}
+#footerchicklets {
+  float: left;
+  margin-left: 8px;
+  padding-top: 10px;
+}
+.chicklets  img {
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+#georssicon {
+  width: 25px !important;
+  height: 25px !important;
+  margin-top: 1px;
+  margin-right: 0 !important;
+}
 #main {width:100%; height:auto;}
 }
 #top,#top-small,#bottom{width:100%;}
-#middle{height:60px;background:url('../img/middlebg.png') repeat-x;border-top:2px solid #ffffff;border-bottom:2px solid #b2b2b2;vertical-align:center;}
+#middle{height:30px;background:url('../img/middlebg.png') repeat-x;border-top:2px solid #ffffff;border-bottom:2px solid #b2b2b2;vertical-align:center;}
 #map {height:400px;}
 #sponsors{background:#fff;padding:10px;vertical-align:center;}
+#links{
+  margin: 0;
+  padding: 8px 0;
+  /* background:url('../img/middlebg.png') repeat-x; */
+  background-color: #ffffff;
+  border-top:1px solid #b2b2b2;
+}
+#links > p {
+  margin: 0px;
+  padding: 0px;
+  text-transform: lowercase;
+  font-size: 18px;
+}
+a, a:visited, a:link {
+  color: #2575AD;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
 
 .push {height:100px;}
-.rights{background:#333;height:40px;line-height:40px;}
+.rights{background:#333;height:40px;line-height:40px;padding-right: 66px;}
 
-.app-welcome{margin-top:15px;font-size:x-large;}
+.app-welcome{margin-top:3px;font-size:large;text-transform: lowercase;}
 .align-center{text-align:center;}
 #search-form{margin:0 5% 0 5%;}
 #more{margin:0 5% 0 5%;}
