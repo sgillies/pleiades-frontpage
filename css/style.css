@@ -87,6 +87,35 @@ footer {width:100%;color:#fff;text-align:center;overflow:hidden;font-size:12px;v
   background-color: transparent;
   background-size: 629px 349px;
 }
+#top {
+    font-size: 13px;
+    color: white;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+}
+#top ul {
+  clear: both;
+  float: right;
+  padding-right: 1em;
+}
+ul#site-actions {
+    list-style: none outside none;
+    margin-top: 0.5em;
+    font-size: 0.9em;
+}
+ul#site-actions > li {
+  display: inline;
+    padding: 0 0.4em;
+}
+ul#site-actions > li > a {
+  text-decoration: none;
+  color: white;
+}
+ul#site-actions > li > a:hover {
+  text-decoration: underline;
+}
 #mapchicklets {
   position: absolute;
   top: 133px;
