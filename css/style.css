@@ -74,6 +74,7 @@ body {
   background-repeat: repeat-x;
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
   color:#333;
+  min-width: 700px;
 }
 p {font-size:large;}
 a {color:#2575AD;}
@@ -209,6 +210,14 @@ input.submit {
 .right{float:right;}
 .title{font-size:x-large;margin:0 1em 0 1em;}
 .decoGui{font-size:large;vertical-align:bottom;}
+.disclaimer {
+  font-size: 0.9em;
+  color: #555;
+  width: 25%;
+  margin: auto;
+  margin-top: 0.5em;
+  min-width:400px;
+}
 
 /* ==|== non-semantic helper classes ======================================== */
 .ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
